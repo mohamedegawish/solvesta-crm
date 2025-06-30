@@ -11,7 +11,7 @@ class ContactController extends Controller
    
     public function index()
     {
-        $contacts = Contact::all();
+        $contacts=Contact::latest()->paginate(10);
         return view('admin/contacts.index',['contacts'=>$contacts]);
     }
 
@@ -57,7 +57,7 @@ class ContactController extends Controller
         $contact->description = $request->input('description');
         $contact->save();
 
-      return redirect('contacts');
+      return redirect('contacts')->with('success', 'Contact created successfully!');
         
     }
 

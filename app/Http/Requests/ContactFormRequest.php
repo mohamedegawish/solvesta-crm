@@ -16,7 +16,7 @@ class ContactFormRequest extends FormRequest
             'company' => 'nullable|string|max:255',
             'first_name'=> 'required|string|max:255',
         'last_name'=> 'required|string|max:255',
-        'email'=> 'required|email|max:255',
+        'email'=> 'required|email|max:255|unique:contacts,email',
         'email_2'=> 'required|email|max:255',
         'phone'=> 'required|string|max:255',
         'phone_2'=> 'required|string|max:255',
