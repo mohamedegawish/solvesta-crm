@@ -313,30 +313,30 @@
         </div>
         <ul class="sidebar-nav">
             <li class="nav-item">
-                <a href="/" class="nav-link active" :active="request()->is('/')"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                <a href="/" class="nav-link {{ Request::is('/') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link model-toggle"><i class="fas fa-cube"></i><span>Model</span><i class="fas fa-chevron-down"></i></a>
                 <ul class="submenu" id="modelSubmenu">
-                    <li><a href="/leads" :active="request()->is('leads')"><i class="fas fa-user-plus"></i><span>Leads</span></a></li>
-                    <li><a href="/contacts" :active="request()->is('contacts')"><i class="fas fa-address-book"></i><span>Contacts</span></a></li>
-                    <li><a href="/deals" :active="request()->is('deals')"><i class="fas fa-handshake"></i><span>Deals</span></a></li>
-                    <li><a href="/calls" :active="request()->is('calls')"><i class="fas fa-phone"></i><span>Calls</span></a></li>
-                    <li><a href="/tasks" :active="request()->is('tasks')"><i class="fas fa-tasks"></i><span>Tasks</span></a></li>
-                    <li><a href="/meetings" :active="request()->is('meetings')"><i class="fas fa-calendar-alt"></i><span>Meetings</span></a></li>
+                    <li><a href="/leads" class="{{ Request::is('leads') ? 'active' : '' }}"><i class="fas fa-user-plus"></i><span>Leads</span></a></li>
+                    <li><a href="/contacts" class="{{ Request::is('contacts') ? 'active' : '' }}"><i class="fas fa-address-book"></i><span>Contacts</span></a></li>
+                    <li><a href="/deals" class="{{ Request::is('deals') ? 'active' : '' }}"><i class="fas fa-handshake"></i><span>Deals</span></a></li>
+                    <li><a href="/calls" class="{{ Request::is('calls') ? 'active' : '' }}"><i class="fas fa-phone"></i><span>Calls</span></a></li>
+                    <li><a href="/tasks" class="{{ Request::is('tasks') ? 'active' : '' }}"><i class="fas fa-tasks"></i><span>Tasks</span></a></li>
+                    <li><a href="/meetings" class="{{ Request::is('meetings') ? 'active' : '' }}"><i class="fas fa-calendar-alt"></i><span>Meetings</span></a></li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="/campaigns" class="nav-link" :active="request()->is('campaigns')"><i class="fas fa-bullhorn"></i><span>Campaigns</span></a>
+                <a href="/campaigns" class="nav-link {{ Request::is('campaigns') ? 'active' : '' }}"><i class="fas fa-bullhorn"></i><span>Campaigns</span></a>
             </li>
             <li class="nav-item">
-                <a href="/projects" class="nav-link" :active="request()->is('projects')"><i class="fas fa-project-diagram"></i><span>Projects</span></a>
+                <a href="/projects" class="nav-link {{ Request::is('projects') ? 'active' : '' }}"><i class="fas fa-project-diagram"></i><span>Projects</span></a>
             </li>
             <li class="nav-item">
-                <a href="/accounts" class="nav-link" :active="request()->is('accounts')"><i class="fas fa-building"></i><span>Accounts</span></a>
+                <a href="/accounts" class="nav-link {{ Request::is('accounts') ? 'active' : '' }}"><i class="fas fa-building"></i><span>Accounts</span></a>
             </li>
             <li class="nav-item">
-                <a href="/documents" class="nav-link" :active="request()->is('documents')"><i class="fas fa-file-alt"></i><span>Documents</span></a>
+                <a href="/documents" class="nav-link {{ Request::is('documents') ? 'active' : '' }}"><i class="fas fa-file-alt"></i><span>Documents</span></a>
             </li>
         </ul>
     </aside>
