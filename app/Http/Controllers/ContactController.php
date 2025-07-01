@@ -63,6 +63,8 @@ class ContactController extends Controller
 
     public function show(string $id)
     {
+              $contact = Contact::findOrFail($id);
+        return view('admin.contacts.view', ['contact' => $contact]);
         
     }
 
@@ -114,6 +116,9 @@ class ContactController extends Controller
 
     public function destroy(string $id)
     {
+        $contact=Contact::findOrFail($id);
+        $contact->delete();
+        return redirect('contacts')->with('success', 'Contact deleted successfully!');
         
     }
 }
