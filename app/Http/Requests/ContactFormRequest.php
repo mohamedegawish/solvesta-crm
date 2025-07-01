@@ -13,13 +13,13 @@ class ContactFormRequest extends FormRequest
     {
         return [
             
-            'company' => 'nullable|string|max:255',
+            'company' => 'nullable|string|max:255|',
             'first_name'=> 'required|string|max:255',
         'last_name'=> 'required|string|max:255',
-        'email'=> 'required|email|max:255|unique:contacts,email',
-        'email_2'=> 'required|email|max:255',
+        'email'=> "required|email|max:255|unique:contacts,email,{$this->input('id')}",
+        'email_2'=> 'email|max:255',
         'phone'=> 'required|string|max:255',
-        'phone_2'=> 'required|string|max:255',
+        'phone_2'=> 'string|max:255',
         'mobile'=> 'required|string|max:255',
         'fax'=> 'required|string|max:255',
         'assistant_name'=> 'required|string|max:255',

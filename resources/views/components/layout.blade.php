@@ -98,6 +98,9 @@
             color: var(--primary-color);
             text-decoration: none;
         }
+.custom-btn-text {
+    color: #f0f9ff; 
+}
 
         .page-container {
             flex-grow: 1;
