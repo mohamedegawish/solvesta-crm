@@ -27,7 +27,6 @@
                 
                 <form class="mt-8 space-y-6" action="/signup" method="POST">
                     @csrf
-                    
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                         <!-- First Name -->
                         <div>
@@ -40,6 +39,10 @@
                                 </div>
                                 <input id="first-name" name="first_name" type="text" required class="block w-full rounded-md border-0 bg-gray-800 py-3 pl-10 text-gray-200 ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm" placeholder="First Name">
                             </div>
+                             @error('first_name')
+                                 <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+
+                            @enderror
                         </div>
                         
                         <!-- Last Name -->
@@ -52,6 +55,10 @@
                                 <input id="last-name" name="last_name" type="text" required class="block w-full rounded-md border-0 bg-gray-800 py-3 pl-10 text-gray-200 ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm" placeholder="Last Name">
                             </div>
                         </div>
+                         @error('last_name')
+                                 <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+
+                            @enderror
                     </div>
 
                     <!-- Company Name -->
@@ -65,6 +72,10 @@
                             </div>
                             <input id="company" name="company" type="text" required class="block w-full rounded-md border-0 bg-gray-800 py-3 pl-10 text-gray-200 ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm" placeholder="Company Name">
                         </div>
+                         @error('company')
+                                 <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+
+                            @enderror
                     </div>
                     
                     <!-- Email Address -->
@@ -78,6 +89,28 @@
                             </div>
                             <input id="email-address" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 bg-gray-800 py-3 pl-10 text-gray-200 ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm" placeholder="Work Email Address">
                         </div>
+                         @error('email')
+                                 <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+
+                            @enderror
+                    </div>
+
+                    <!-- Phone -->
+                    <div>
+                        <label for="email-address" class="sr-only">Phone</label>
+                        <div class="relative">
+                            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+  <path d="M2.003 5.884A2 2 0 014 4h2.586a1 1 0 01.707.293l1.414 1.414a1 1 0 01.293.707v2.586a1 1 0 01-.293.707l-1 1a12.08 12.08 0 005.657 5.657l1-1a1 1 0 01.707-.293h2.586a1 1 0 01.707.293l1.414 1.414a1 1 0 01.293.707V16a2 2 0 01-2 2c-8.837 0-16-7.163-16-16a2 2 0 012-2h.003z"/>
+</svg>
+
+                            </div>
+                            <input id="text" name="phone" type="phone" autocomplete="phone" required class="block w-full rounded-md border-0 bg-gray-800 py-3 pl-10 text-gray-200 ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm" placeholder="Your Phone Number">
+                        </div>
+                         @error('phone')
+                                 <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+
+                            @enderror
                     </div>
 
                     <!-- Password -->
@@ -91,6 +124,10 @@
                             </div>
                             <input id="password" name="password" type="password" autocomplete="new-password" required class="block w-full rounded-md border-0 bg-gray-800 py-3 pl-10 text-gray-200 ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm" placeholder="Password">
                         </div>
+                         @error('password')
+                                 <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+
+                            @enderror
                     </div>
 
                     <!-- Confirm Password -->
@@ -104,6 +141,10 @@
                             </div>
                             <input id="password-confirmation" name="password_confirmation" type="password" autocomplete="new-password" required class="block w-full rounded-md border-0 bg-gray-800 py-3 pl-10 text-gray-200 ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm" placeholder="Confirm Password">
                         </div>
+                         @error('password_confirmation')
+                                 <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+
+                            @enderror
                     </div>
                     
                     <div class="flex items-center">

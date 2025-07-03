@@ -47,6 +47,10 @@
                                 </div>
                                 <input id="email-address" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 bg-gray-800 py-3 pl-10 text-gray-200 ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm" placeholder="Email Address">
                             </div>
+                            @error('email')
+                                 <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+
+                            @enderror
                         </div>
 
                         <!-- Password -->
@@ -60,6 +64,10 @@
                                 </div>
                                 <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 bg-gray-800 py-3 pl-10 text-gray-200 ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm" placeholder="Password">
                             </div>
+                             @error('password')
+                                 <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+
+                            @enderror
                         </div>
                     </div>
 
